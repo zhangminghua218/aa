@@ -28,6 +28,7 @@
 
 				if (speed > SHAKE_THRESHOLD) {
 					alert("哈哈，二逼摇动了");
+					navigator.getUserMedia({video:true},function(){alert('111');},function(){alert('222');});
 				}
 				last_x = x;
 				last_y = y;
