@@ -27,15 +27,32 @@
 				var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000;
 
 				if (speed > SHAKE_THRESHOLD) {
-					alert("哈哈，二逼摇动了");
-					navigator.getUserMedia({video:true},function(){alert('111');},function(){alert('222');});
+					//navigator.getUserMedia({video:true},function(){alert('111');},function(){alert('222');});
+				
+				
+					if(navigator.getUserMedia){
+						alert("哈哈，摇动了error");
+						navigator.getUserMedia(‘video’,success,error);
+					}else{
+						alert("哈哈，摇动了ok");	
+					}
+					
 				}
+			}
 				last_x = x;
 				last_y = y;
 				last_z = z;
 			}
 		}
 		init();
+		
+		function success(){
+			alert(1);
+		}
+		
+		function error(){
+			alert(2);
+		}
 	</script>
 	</head>
 	<body>
